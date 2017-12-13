@@ -6,7 +6,9 @@ export class TomeService {
   public articles: any;
   articlesPath = '/assets/articles.json';
 
-  constructor(public http: Http) {}
+  constructor(public http: Http) {
+    console.log('TomeService');
+  }
 
   readJson(path: string) {
     return new Promise((resolve, reject) => {

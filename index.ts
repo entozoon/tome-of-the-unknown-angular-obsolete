@@ -6,4 +6,4 @@
 
 export * from './src/tome.module';
 export * from './src/tome.service';
-export * from './src/tome.component';
+// export * from './src/tome.component';
