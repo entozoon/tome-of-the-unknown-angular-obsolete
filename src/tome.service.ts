@@ -50,7 +50,7 @@ export class TomeService {
   search(searchQuery: string) {
     return new Promise((resolve, reject) => {
       resolve(
-        this.articles.filter(article => {
+        this.articles.filter((article: any) => {
           return article.title
             .toLowerCase()
             .includes(searchQuery.toLowerCase());
