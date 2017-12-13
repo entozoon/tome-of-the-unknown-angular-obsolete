@@ -10,29 +10,6 @@ import { TomeComponent } from './tome.component';
   imports: [HttpModule],
   exports: [TomeComponent]
 })
-// export class TomeOfTheUnknown {
-//   articles: any;
-
-//   constructor(public http: Http) {
-//     console.log('HELLO FROM TOME');
-//     console.log('Attempting to read a JSON file..');
-//     this.testRead().then(results => {
-//       console.log(results);
-//     });
-//   }
-
-//   // This should be in a .service
-//   testRead() {
-//     return new Promise(resolve => {
-//       this.http.get('/assets/articles.json').subscribe(response => {
-//         // console.log('WE ONLY WANT TO RUN THIS ONCE');
-//         this.articles = response.json();
-//         console.log(response);
-//         resolve(this.articles);
-//       });
-//     });
-//   }
-// }
 export class TomeModule {
   static forRoot(): ModuleWithProviders {
     return {
