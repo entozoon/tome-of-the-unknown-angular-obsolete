@@ -1,6 +1,6 @@
 {
   "name": "tome-of-the-unknown",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":
     "Angular blog system, nice and generic, packaged within a .. package",
   "main": "index.js",

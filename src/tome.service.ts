@@ -10,6 +10,8 @@ export class TomeService {
     console.log('TomeService');
   }
 
+  // readJson
+  // Read a given JSON file and resolve parsed
   readJson(path: string) {
     return new Promise((resolve, reject) => {
       this.http.get(path).subscribe(
@@ -27,14 +29,11 @@ export class TomeService {
     });
   }
 
-  get articlez() {
-    return this.articles;
-  }
-
+  // getArticles
+  // Read all articles from JSON, store locally as this.articles and return in resolve
   getArticles() {
     return new Promise((resolve, reject) => {
       console.log('TomeOfTheUnknown: Getting articles');
-      // return this.articles
       this.readJson(this.articlesPath)
         .then(results => {
           this.articles = results;
@@ -43,6 +42,20 @@ export class TomeService {
         .catch(err => {
           reject(err);
         });
+    });
+  }
+
+  // search
+  // Hunt for the query within the article titles (ignoring case)
+  search(searchQuery: string) {
+    return new Promise((resolve, reject) => {
+      resolve(
+        this.articles.filter(article => {
+          return article.title
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase());
+        })
+      );
     });
   }
 }
