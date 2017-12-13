@@ -3,12 +3,12 @@ import { HttpModule, Http, Response } from '@angular/http';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [CommonModule, HttpModule]
+  imports: [HttpModule]
 })
 export class TomeOfTheUnknown {
   articles: any;
 
-  constructor(private http: Http) {
+  constructor(public http: Http) {
     console.log('HELLO FROM TOME');
     console.log('Attempting to read a JSON file..');
     this.testRead().then(results => {
